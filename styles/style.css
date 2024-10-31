@@ -1,0 +1,268 @@
+/* Cuerpo */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 3000px;
+    background-color: #121212;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* navbar */
+nav {
+    background-color: rgba(18, 18, 18, 0.8);
+    transition: background-color 0.5s ease, top 0.5s ease;
+}
+
+nav.scrolled {
+    background-color: #ffbf00;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+nav.scrolled .navbar-nav .nav-link {
+    color: white;
+}
+
+nav.scrolled .navbar-nav .nav-link:hover {
+    color: black;
+}
+
+nav.scrolled .nav-item .nav-link.active {
+    color: black;
+    border-bottom: solid 3px #ffffff;
+}
+
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    color: #FFD700;
+    transition: color 0.3s;
+}
+
+nav.scrolled .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #D4AF37;
+}
+
+.nav-item .nav-link.active {
+    color: #D4AF37;
+    border-bottom: solid 3px #ffffff;
+}
+
+.navbar-nav .bi {
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
+
+.titulo {
+    font-size: 1.6em;
+}
+
+.transparencia {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* Imagen hero */
+.hero-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.hero-text {
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #D4AF37;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0);
+    font-family: "Londrina Shadow", sans-serif;
+
+}
+
+.hero-text>h1 {
+    font-size: 4.5em;
+    color: #FFD700;
+}
+
+.hero-text>p {
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* Recetas Inicio */
+section.container {
+    padding: 2rem 1rem;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section a {
+    text-decoration: none;
+}
+
+section .text-center h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #FFD700;
+}
+
+section .text-center p {
+    font-size: 1.1rem;
+    color: #a8a8a8;
+}
+
+section .card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #2a2a2a;
+}
+
+section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+section .card-img-top {
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+section .card-title {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+section .card-text {
+    color: #c0c0c0;
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------- */
+
+
+/* Carrusel */
+.carousel-image {
+    height: 700px;
+    object-fit: cover;
+}
+
+.carousel-item {
+    object-fit: cover;
+}
+
+.carousel-text {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------- */
+
+/* Footer */
+footer {
+    background-color: #121212;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #D4AF37;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------- */
+
+
+/*IPHONE 8*/
+@media (min-width: 393px) and (max-width: 767.9px) {
+    .hero-text>h1 {
+        font-size: 2.3em;
+    }
+
+    .hero-text>p {
+        font-size: 0.9em;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .carousel-image {
+        height: 400px;
+    }
+}
+
+/* IPAD MINI */
+@media (min-width: 768px) and (max-width: 1023.9px) {
+    .hero-text>h1 {
+        font-size: 4em;
+    }
+
+    .hero-text>p {
+        font-size: 2.3em;
+    }
+
+    .carousel-image {
+        height: 450px;
+    }
+}
+
+/* IPAD PRO */
+@media (min-width: 1024px) and (max-width: 1439.9px) {
+    .carousel-image {
+        height: 500px;
+    }
+}
+
+/* PORTATIL */
+@media (min-width: 1440px) and (max-width: 1919.9px) {
+    .carousel-image {
+        height: 600px;
+    }
+}
+
+/* FULL HD */
+@media (min-width: 1920px) {
+    .carousel-image {
+        height: 700px;
+    }
+}
