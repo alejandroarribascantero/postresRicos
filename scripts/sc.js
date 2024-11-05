@@ -1,38 +1,34 @@
-const navbar = document.querySelector('nav');
-let scrollTimeout = null; // Almacena el temporizador de inactividad
-let lastScrollY = window.scrollY; // Almacena la última posición de scroll
+const barraNavegacion = document.querySelector('nav');
+let tiempoDesplazamiento = null;
+let ultimoScrollY = window.scrollY;
 
 window.addEventListener('scroll', function () {
-    // Mostrar el navbar cuando el usuario comienza a hacer scroll
-    navbar.style.top = '0';
+    barraNavegacion.style.top = '0';
 
-    // Cambiar el color del navbar al hacer scroll
+    // Añadir la clase scrolled para cambiar colores al desplazarse por la pagina
     if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+        barraNavegacion.classList.add('scrolled');
     } else {
-        navbar.classList.remove('scrolled');
+        barraNavegacion.classList.remove('scrolled');
     }
 
-    // Limpiar el temporizador anterior
-    clearTimeout(scrollTimeout);
+    clearTimeout(tiempoDesplazamiento);
 
-    // Ocultar el navbar después de 2 segundos de inactividad, excepto si está en la parte superior de la página
-    // y no en dispositivos móviles
-    if (window.innerWidth > 1024) { // Solo aplica en pantallas más grandes
-        scrollTimeout = setTimeout(() => {
+    // Ocultar el menu en pantallas grandes
+    if (window.innerWidth > 1024) {
+        tiempoDesplazamiento = setTimeout(() => {
             if (window.scrollY !== 0) {
-                navbar.style.top = '-100px'; // Oculta el navbar (ajusta el valor según tu diseño)
+                barraNavegacion.style.top = '-100px';
             }
         }, 2000);
     }
 
-    // Actualizar la última posición de scroll
-    lastScrollY = window.scrollY;
+    ultimoScrollY = window.scrollY;
 });
 
-// Mostrar el navbar al pasar el ratón por la parte superior de la ventana
-window.addEventListener('mousemove', function (event) {
-    if (event.clientY <= 25) { // Si el mouse está en los primeros 50px de la ventana
-        navbar.style.top = '0';
+// Desplegar el menu si el mouse se mueve hacia la parte superior de la ventana
+window.addEventListener('mousemove', function (evento) {
+    if (evento.clientY <= 25) {
+        barraNavegacion.style.top = '0';
     }
 });
