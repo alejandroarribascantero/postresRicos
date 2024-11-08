@@ -31,7 +31,6 @@ nav.scrolled .navbar-nav .nav-link:hover {
 
 nav.scrolled .nav-item .nav-link.active {
     color: black;
-    border-bottom: solid 3px #ffffff;
 }
 
 
@@ -63,7 +62,6 @@ nav.scrolled .navbar-nav .nav-link {
 
 .nav-item .nav-link.active {
     color: #D4AF37;
-    border-bottom: solid 3px #ffffff;
 }
 
 .navbar-nav .bi {
@@ -265,4 +263,50 @@ footer a:hover {
     .carousel-image {
         height: 700px;
     }
+}
+
+.navbar-nav.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-nav .menu-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-nav .menu-item .wee {
+    height: 2px;
+    width: 100%;
+    background-color: #FFD700;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.75s;
+    opacity: 0;
+}
+
+.navbar-nav .menu-item:hover .wee {
+    opacity: 1;
+}
+
+.navbar-nav .current-menu-item .wee {
+    opacity: 1;
+}
+
+nav.scrolled .navbar-nav .menu-item .wee {
+    background-color: #000000;
+}
+
+nav.scrolled .navbar-nav .current-menu-item .wee {
+    opacity: 1;
+}
+
+nav.scrolled .navbar-nav .menu-item:hover .wee {
+    opacity: 1;
+}
+
+.navbar-nav .menu-item .nav-link {
+    transition: 0.75s;
 }

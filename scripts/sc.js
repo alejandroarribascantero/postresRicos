@@ -32,3 +32,33 @@ window.addEventListener('mousemove', function (evento) {
         barraNavegacion.style.top = '0';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    function updateMagicLine() {
+        const currentItem = document.querySelector('.current-menu-item');
+        if (!currentItem) return; // Si no hay elemento actual, salimos de la función
+        
+        const menuItems = document.querySelectorAll('.menu-item');
+        const thisNav = currentItem.offsetLeft;
+        const wee = currentItem.querySelector('.wee');
+        if (!wee) return; // Si no hay elemento .wee, salimos de la función
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const left = this.offsetLeft - thisNav;
+                const width = this.offsetWidth;
+                wee.style.left = `${left}px`;
+                wee.style.width = `${width}px`;
+            });
+
+            item.addEventListener('mouseleave', function() {
+                const initWidth = currentItem.offsetWidth;
+                wee.style.left = '0';
+                wee.style.width = `${initWidth}px`;
+            });
+        });
+    }
+
+    window.addEventListener('load', updateMagicLine);
+    window.addEventListener('resize', updateMagicLine);
+});
