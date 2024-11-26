@@ -3,7 +3,6 @@ body,
 html {
     margin: 0;
     padding: 0;
-    height: 3000px;
     background-color: #121212;
 }
 
@@ -127,7 +126,29 @@ section.container {
     padding: 2rem 1rem;
     background-color: #1e1e1e;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #a8a8a8;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+section li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #FFD700;
+}
+
+section p strong {
+    color: #ffffff;
+}
+
+section li strong {
+    color: #ffffff;
 }
 
 section a {
@@ -170,6 +191,7 @@ section .card-title {
 section .card-text {
     color: #c0c0c0;
 }
+
 /* ------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
 
@@ -212,6 +234,21 @@ footer a:hover {
 /* ------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
 
+/*Más pequeño*/
+@media (max-width: 392.9px) {
+    .hero-text>h1 {
+        font-size: 2.3em;
+    }
+
+    .hero-text>p {
+        font-size: 0.9em;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .carousel-image {
+        height: 400px;
+    }
+}
 
 /*IPHONE 8*/
 @media (min-width: 393px) and (max-width: 767.9px) {
