@@ -62,12 +62,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('load', updateMagicLine);
     window.addEventListener('resize', updateMagicLine);
 
-    var elem = document.querySelector('.carousel');
-    var flkty = new Flickity(elem, {
-        // Opciones de Flickity
-        cellAlign: 'left',
-        contain: true,
-        autoPlay: true,
-        wrapAround: true
-    });
 });
