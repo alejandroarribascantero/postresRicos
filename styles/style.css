@@ -218,6 +218,32 @@ section .card-text {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.carousel-text h1 {
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    -webkit-text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+    -moz-text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+    -ms-text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+    -o-text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+    text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+    color: rgba(255, 215, 0, 0.7);
+    overflow: visible;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.carousel-text h1:hover {
+    color: #FFD700;
+    -webkit-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    -moz-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    -ms-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    -o-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+}
+
 /* ------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
 
