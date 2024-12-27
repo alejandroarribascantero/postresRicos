@@ -1,11 +1,13 @@
+// Variables globales
 const barraNavegacion = document.querySelector('nav');
 let tiempoDesplazamiento = null;
 let ultimoScrollY = window.scrollY;
+let imagenes = [];
 
-window.addEventListener('scroll', function () {
+// Funciones
+function manejarScroll() {
     barraNavegacion.style.top = '0';
 
-    // Añadir la clase scrolled para cambiar colores al desplazarse por la pagina
     if (window.scrollY > 50) {
         barraNavegacion.classList.add('scrolled');
     } else {
@@ -14,7 +16,6 @@ window.addEventListener('scroll', function () {
 
     clearTimeout(tiempoDesplazamiento);
 
-    // Ocultar el menu en pantallas grandes
     if (window.innerWidth > 1024) {
         tiempoDesplazamiento = setTimeout(() => {
             if (window.scrollY !== 0) {
@@ -24,124 +25,119 @@ window.addEventListener('scroll', function () {
     }
 
     ultimoScrollY = window.scrollY;
-});
+}
 
-// Desplegar el menu si el mouse se mueve hacia la parte superior de la ventana
-window.addEventListener('mousemove', function (evento) {
+function manejarMouseMove(evento) {
     if (evento.clientY <= 35) {
         barraNavegacion.style.top = '0';
     }
-});
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    function updateMagicLine() {
-        const currentItem = document.querySelector('.current-menu-item');
-        if (!currentItem) return; // Si no hay elemento actual, salimos de la función
+function actualizarLineaMagica() {
+    const elementoActual = document.querySelector('.currentMenuItem');
+    if (!elementoActual) return;
 
-        const menuItems = document.querySelectorAll('.menu-item');
-        const thisNav = currentItem.offsetLeft;
-        const wee = currentItem.querySelector('.wee');
-        if (!wee) return; // Si no hay elemento .wee, salimos de la función
+    const elementosMenu = document.querySelectorAll('.menuItem');
+    const thisNav = elementoActual.offsetLeft;
+    const wee = elementoActual.querySelector('.wee');
+    if (!wee) return;
 
-        menuItems.forEach(item => {
-            item.addEventListener('mouseenter', function () {
-                const left = this.offsetLeft - thisNav;
-                const width = this.offsetWidth;
-                wee.style.left = `${left}px`;
-                wee.style.width = `${width}px`;
-            });
-
-            item.addEventListener('mouseleave', function () {
-                const initWidth = currentItem.offsetWidth;
-                wee.style.left = '0';
-                wee.style.width = `${initWidth}px`;
-            });
+    elementosMenu.forEach(item => {
+        item.addEventListener('mouseenter', function () {
+            const left = this.offsetLeft - thisNav;
+            const width = this.offsetWidth;
+            wee.style.left = `${left}px`;
+            wee.style.width = `${width}px`;
         });
-    }
 
-    window.addEventListener('load', updateMagicLine);
-    window.addEventListener('resize', updateMagicLine);
-
-    
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('../imagenes.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('galeria');
-        if (!container) {
-            console.error('Error: galeria-container not found');
-            return;
-        }
-        data.forEach(image => {
-            const div = document.createElement('div');
-            div.className = `col-md-3 col-6 ${image.class} visible`;
-            div.innerHTML = `<img src="${image.src}" alt="${image.alt}" class="img-fluid">`;
-            container.appendChild(div);
+        item.addEventListener('mouseleave', function () {
+            const initWidth = elementoActual.offsetWidth;
+            wee.style.left = '0';
+            wee.style.width = `${initWidth}px`;
         });
-    })
-    .catch(error => console.error('Error loading JSON:', error));
-});
-
-
-// Galeria
-function filtrarGaleria(categoria) {
-    // Cambiar el estado del botón activo
-    const botones = document.querySelectorAll('.boton-categoria');
-    botones.forEach(boton => boton.classList.remove('activo'));
-    event.target.classList.add('activo');
-
-    // Aplicar la lógica de filtrado con efecto
-    const elementos = document.querySelectorAll('.galeria .col-md-3');
-    elementos.forEach(elemento => {
-        elemento.classList.remove('visible'); // Oculta con efecto
-        setTimeout(() => {
-            if (categoria === 'todas' || elemento.classList.contains(categoria)) {
-                elemento.style.display = 'block';
-                setTimeout(() => elemento.classList.add('visible'), 50); // Muestra con efecto
-            } else {
-                elemento.style.display = 'none';
-            }
-        }, 500); // Tiempo del desvanecimiento
     });
 }
 
-let currentImageIndex = 0;
-const images = document.querySelectorAll('.galeria img');
+function cargarImagenes() {
+    fetch('../imagenes.json')
+        .then(response => response.json())
+        .then(data => {
+            imagenes = data;
+            const contenedor = document.getElementById('galeria');
+            if (!contenedor) {
+                console.error('Error');
+                return;
+            }
+            data.forEach((imagen, index) => {
+                const div = document.createElement('div');
+                div.className = `col-md-3 col-6 ${imagen.class} visible`;
+                div.innerHTML = `<img src="${imagen.src}" alt="${imagen.alt}" class="img-fluid" data-index="${index}">`;
+                contenedor.appendChild(div);
+            });
 
-images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-        openLightbox(index);
+            const elementosImagen = document.querySelectorAll('.galeria img');
+            elementosImagen.forEach((img) => {
+                img.addEventListener('click', (event) => {
+                    const index = parseInt(event.target.getAttribute('data-index'));
+                    abrirLightbox(index);
+                });
+            });
+        })
+        .catch(error => console.error('Error al cargar JSON:', error));
+}
+
+function filtrarGaleria(categoria) {
+    const botones = document.querySelectorAll('.botonCategoria');
+    botones.forEach(boton => boton.classList.remove('activo'));
+    event.target.classList.add('activo');
+
+    const elementos = document.querySelectorAll('.galeria .col-md-3');
+    elementos.forEach(elemento => {
+        elemento.classList.remove('visible');
+        setTimeout(() => {
+            if (categoria === 'todas' || elemento.classList.contains(categoria)) {
+                elemento.style.display = 'block';
+                setTimeout(() => elemento.classList.add('visible'), 50);
+            } else {
+                elemento.style.display = 'none';
+            }
+        }, 500);
     });
-});
+}
 
-function openLightbox(index) {
+function abrirLightbox(index) {
     currentImageIndex = index;
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     lightbox.style.display = 'block';
-    lightboxImg.src = images[currentImageIndex].src;
+    lightboxImg.src = imagenes[currentImageIndex].src;
 
-    // Añadir evento para cerrar el lightbox al hacer clic fuera de la imagen
     lightbox.addEventListener('click', function (event) {
         if (event.target === lightbox) {
-            closeLightbox();
+            cerrarLightbox();
         }
     });
 }
 
-function closeLightbox() {
+function cerrarLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
 
-function changeImage(direction) {
-    currentImageIndex += direction;
+function cambiarImagen(direccion) {
+    currentImageIndex += direccion;
     if (currentImageIndex < 0) {
-        currentImageIndex = images.length - 1;
-    } else if (currentImageIndex >= images.length) {
+        currentImageIndex = imagenes.length - 1;
+    } else if (currentImageIndex >= imagenes.length) {
         currentImageIndex = 0;
     }
-    document.getElementById('lightbox-img').src = images[currentImageIndex].src;
+    document.getElementById('lightbox-img').src = imagenes[currentImageIndex].src;
 }
 
+// Inicialización
+document.addEventListener('DOMContentLoaded', function () {
+    window.addEventListener('scroll', manejarScroll);
+    window.addEventListener('mousemove', manejarMouseMove);
+    window.addEventListener('load', actualizarLineaMagica);
+    window.addEventListener('resize', actualizarLineaMagica);
+    cargarImagenes();
+});

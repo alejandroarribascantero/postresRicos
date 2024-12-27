@@ -30,31 +30,31 @@
                     <span class="fw-bold text-white titulo">Flan-Tastico</span>
                 </a>
                 <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    data-bs-target="#barraNavegacion" aria-controls="barraNavegacion" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="collapse navbar-collapse justify-content-end" id="barraNavegacion">
                     <ul class="navbar-nav menu">
-                        <li class="nav-item menu-item">
+                        <li class="nav-item menuItem">
                             <a class="nav-link" aria-current="page" href="../index.html">
                                 <i class="bi bi-house-door"></i> Inicio
                             </a>
                             <div class="wee"></div>
                         </li>
-                        <li class="nav-item menu-item current-menu-item">
+                        <li class="nav-item menuItem currentMenuItem">
                             <a class="nav-link active" href="galeria.html">
                                 <i class="bi bi-image"></i> Galería
                             </a>
                             <div class="wee"></div>
                         </li>
-                        <li class="nav-item menu-item">
+                        <li class="nav-item menuItem">
                             <a class="nav-link" href="recetas.html">
                                 <i class="bi bi-film"></i> Recetas
                             </a>
                             <div class="wee"></div>
                         </li>
-                        <li class="nav-item menu-item">
+                        <li class="nav-item menuItem">
                             <a class="nav-link" href="contacto.html">
                                 <i class="bi bi-envelope"></i> Contacto
                             </a>
@@ -66,16 +66,16 @@
         </nav>
     </header>
     <!-- Galeria -->
-    <section class="container galeriaDeImagenes" id="galeriaDeImagenes"></div>
+    <section class="container galeriaDeImagenes" id="galeriaDeImagenes">
         <div class="d-flex justify-content-center mb-4 filtrosGaleria">
-            <span class="boton-categoria activo" onclick="filtrarGaleria('todas')">Todas</span>
-            <span class="boton-categoria" onclick="filtrarGaleria('hermosas')">Hermosas</span>
-            <span class="boton-categoria" onclick="filtrarGaleria('creativas')">Creativas</span>
-            <span class="boton-categoria" onclick="filtrarGaleria('geniales')">Geniales</span>
-            <span class="boton-categoria" onclick="filtrarGaleria('asombrosas')">Asombrosas</span>
+            <span class="botonCategoria activo" onclick="filtrarGaleria('todas')">Todas</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('hermosas')">Hermosas</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('creativas')">Creativas</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('geniales')">Geniales</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('asombrosas')">Asombrosas</span>
         </div>
         <div class="row galeria" id="galeria">
-            
+            <!-- Las imágenes se cargarán aquí dinámicamente -->
         </div>
     </section>
     <!-- Footer -->
@@ -95,8 +95,8 @@
         <div class="lightbox-content">
             <img id="lightbox-img" src="" alt="Imagen ampliada">
         </div>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
+        <a class="prev" onclick="cambiarImagen(-1)">&#10094;</a>
+        <a class="next" onclick="cambiarImagen(1)">&#10095;</a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
