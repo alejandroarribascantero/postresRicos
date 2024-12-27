@@ -25,7 +25,7 @@
     <header>
         <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../index.html">
                     <img src="../images/logo.svg" alt="Logo">
                     <span class="fw-bold text-white titulo">Flan-Tastico</span>
                 </a>
@@ -65,7 +65,19 @@
             </div>
         </nav>
     </header>
-
+    <!-- Galeria -->
+    <section class="container galeriaDeImagenes" id="galeriaDeImagenes"></div>
+        <div class="d-flex justify-content-center mb-4 filtrosGaleria">
+            <span class="boton-categoria activo" onclick="filtrarGaleria('todas')">Todas</span>
+            <span class="boton-categoria" onclick="filtrarGaleria('hermosas')">Hermosas</span>
+            <span class="boton-categoria" onclick="filtrarGaleria('creativas')">Creativas</span>
+            <span class="boton-categoria" onclick="filtrarGaleria('geniales')">Geniales</span>
+            <span class="boton-categoria" onclick="filtrarGaleria('asombrosas')">Asombrosas</span>
+        </div>
+        <div class="row galeria" id="galeria">
+            
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="py-4">
         <div class="container">
@@ -79,6 +91,13 @@
         </div>
     </footer>
 
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Imagen ampliada">
+        </div>
+        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+        <a class="next" onclick="changeImage(1)">&#10095;</a>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

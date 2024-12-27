@@ -288,6 +288,18 @@ footer a:hover {
     section .text-center h2{ /*INTRO TITULO*/
         font-size: 1.4em;
     }
+    .filtrosGaleria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .boton-categoria {
+        width: 30%; /* Ajusta el ancho para que quepan 3 botones en una fila */
+        padding: 5px 10px; /* Reduce el padding */
+        font-size: 1em; /* Ajusta el tamaño de la fuente */
+        margin-bottom: 10px; /* Añade un margen inferior para separar las filas */
+        text-align: center;
+    }
 }
 
 /*IPHONE 8*/
@@ -306,6 +318,18 @@ footer a:hover {
     }
     section .text-center h2{
         font-size: 1.7em;
+    }
+    .filtrosGaleria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .boton-categoria {
+        text-align: center;
+        width: 30%; /* Ajusta el ancho para que quepan 3 botones en una fila */
+        padding: 5px 10px; /* Reduce el padding */
+        font-size: 1em; /* Ajusta el tamaño de la fuente */
+        margin-bottom: 10px; /* Añade un margen inferior para separar las filas */
     }
 }
 
@@ -389,4 +413,99 @@ nav.scrolled .navbar-nav .menu-item:hover .wee {
 
 .navbar-nav .menu-item .nav-link {
     transition: 0.75s;
+}
+/* galeria */
+.galeriaDeImagenes{
+    margin-top: 120px;
+}
+.boton-categoria {
+    border: 1px solid #FFD700;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #121212;
+    color: #FFD700;
+    transition: background-color 0.3s, color 0.3s;
+}
+.boton-categoria.activo {
+    background-color: #FFD700;
+    color: #121212;
+}
+.boton-categoria:hover {
+    background-color: #D4AF37;
+    color: #ffffff;
+}
+.galeria img {
+    margin-top: 5px;
+    object-fit: cover; /* Ajusta las imágenes para que ocupen el contenedor */
+    border-radius: 10px;
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    height: 200px; /* Altura fija para todas las imágenes */
+    transition: transform 0.3s, opacity 0.5s ease-in-out;
+}
+.galeria img:hover {
+    transform: scale(1.05);
+}
+.galeria .col-md-3 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.galeria .col-md-3.visible {
+    opacity: 1;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 60%; /* Reduce el tamaño de la imagen */
+    max-width: 500px; /* Ajusta el tamaño máximo */
+}
+
+.lightbox-content img {
+    width: 100%;
+    max-height: 50vh; /* Ajusta la altura máxima al 80% de la altura de la ventana */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+    margin-top: 50%; /* Ajusta el margen superior */
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #D4AF37;
 }
