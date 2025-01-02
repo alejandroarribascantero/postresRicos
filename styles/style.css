@@ -399,11 +399,8 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 .lightbox-content img {
     width: 100%;
     max-height: 50vh;
-    /* Ajusta la altura máxima al 80% de la altura de la ventana */
     object-fit: contain;
-    /* Asegura que la imagen mantenga su proporción */
     margin-top: 50%;
-    /* Ajusta el margen superior */
 }
 
 .prev,
@@ -434,6 +431,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 .next:hover {
     background-color: #D4AF37;
 }
+
 .heroTextGaleria {
     white-space: nowrap;
     position: absolute;
@@ -451,7 +449,8 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     font-size: 4.5em;
     color: #FFD700;
 }
-.flechaAbajo img{
+
+.flechaAbajo img {
     margin-top: 150px;
     width: 150px;
     animation: mover 0.7s ease-in-out infinite alternate;
@@ -461,9 +460,73 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(30px);
     }
+}
+
+/* Contacto Datos */
+.heroeContacto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    position: relative;
+}
+
+.heroImageContacto {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.heroTextContacto {
+    white-space: nowrap;
+    position: absolute;
+    color: #D4AF37;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0);
+    font-family: "Londrina Shadow", sans-serif;
+
+}
+
+.heroTextContacto h1 {
+    font-size: 19.5em;
+    line-height: 0.9;
+}
+
+.heroTextContacto div {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;
+}
+
+.heroTextContacto div:hover, .social-icons i:hover {
+    cursor: pointer;
+    color: #FFD700;
+    -webkit-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    -moz-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    -ms-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    -o-text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+    text-shadow: 0 0 10px #D4AF37, 0 0 50px #FFD700;
+}
+
+.social-icons {
+    position: absolute;
+    left: 30px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.social-icons i {
+    font-size: 2rem;
+    color: #FFD700;
 }
 
 /* ------------------------------------------------------------------------------------------------------- */
@@ -471,7 +534,9 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
 /*Más pequeño*/
 @media (max-width: 392.9px) {
-    .heroText>h1, .heroTextGaleria>h1{
+
+    .Text>h1,
+    .heroTextGaleria>h1 {
         font-size: 2em;
     }
 
@@ -519,12 +584,15 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .galeriaDeImagenes h1 {
         font-size: 50px;
     }
-    
+
 }
 
 /*IPHONE 8*/
 @media (min-width: 393px) and (max-width: 767.9px) {
-    .heroText>h1, .heroTextGaleria>h1, .heroTextGaleria>h1{
+
+    .heroText>h1,
+    .heroTextGaleria>h1,
+    .heroTextGaleria>h1 {
         font-size: 2em;
     }
 
@@ -571,7 +639,9 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
 /* IPAD MINI */
 @media (min-width: 768px) and (max-width: 1023.9px) {
-    .heroText>h1, .heroTextGaleria>h1 {
+
+    .heroText>h1,
+    .heroTextGaleria>h1 {
         font-size: 4em;
     }
 
@@ -593,6 +663,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .carouselImage {
         height: 500px;
     }
+
     .galeriaDeImagenes h1 {
         font-size: 110px;
     }
@@ -603,6 +674,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .carouselImage {
         height: 600px;
     }
+
     .galeriaDeImagenes h1 {
         font-size: 120px;
     }
@@ -613,8 +685,8 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .carouselImage {
         height: 700px;
     }
+
     .galeriaDeImagenes h1 {
         font-size: 130px;
     }
 }
-
