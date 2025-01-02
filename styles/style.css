@@ -585,6 +585,10 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         font-size: 50px;
     }
 
+    .heroTextContacto h1 {
+        font-size: 1.5em;
+        line-height: 0.9;
+    }
 }
 
 /*IPHONE 8*/
@@ -635,6 +639,36 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .galeriaDeImagenes h1 {
         font-size: 50px;
     }
+    .heroTextContacto {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+    .heroTextContacto h1 {
+        font-size: 5.5em;
+        line-height: 0.9;
+    }
+    .heroTextContacto div {
+        display: contents;
+    }
+    .heroTextContacto div i{
+        display: none;
+    }
+    .heroImageContacto {
+        width: 390px;
+    }
+    .social-icons {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: flex;
+        transform: translate(-50%, -50%);
+    }
+    
+    .social-icons i {
+        font-size: 2rem;
+        color: #FFD700;
+    }
 }
 
 /* IPAD MINI */
@@ -656,6 +690,34 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .galeriaDeImagenes h1 {
         font-size: 90px;
     }
+
+    .heroTextContacto {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+    .heroTextContacto h1 {
+        font-size: 9.5em;
+        line-height: 0.9;
+    }
+    .heroTextContacto div {
+        display: contents;
+    }
+    .heroTextContacto div i{
+        display: none;
+    }
+    .social-icons {
+        position: absolute;
+        left: 50%;
+        top: 53%;
+        display: flex;
+        transform: translate(-50%, -50%);
+    }
+    
+    .social-icons i {
+        font-size: 2rem;
+        color: #FFD700;
+    }
 }
 
 /* IPAD PRO */
@@ -666,6 +728,33 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
     .galeriaDeImagenes h1 {
         font-size: 110px;
+    }
+    .heroTextContacto {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+    .heroTextContacto h1 {
+        font-size: 14em;
+        line-height: 0.9;
+    }
+    .heroTextContacto div {
+        display: contents;
+    }
+    .heroTextContacto div i{
+        display: none;
+    }
+    .social-icons {
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        display: flex;
+        transform: translate(-50%, -50%);
+    }
+    
+    .social-icons i {
+        font-size: 2rem;
+        color: #FFD700;
     }
 }
 
