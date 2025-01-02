@@ -16,13 +16,11 @@ function manejarScroll() {
 
     clearTimeout(tiempoDesplazamiento);
 
-    if (window.innerWidth > 1024) {
-        tiempoDesplazamiento = setTimeout(() => {
-            if (window.scrollY !== 0) {
-                barraNavegacion.style.top = '-100px';
-            }
-        }, 2000);
-    }
+    tiempoDesplazamiento = setTimeout(() => {
+        if (window.scrollY !== 0) {
+            barraNavegacion.style.top = '-100px';
+        }
+    }, 2000);
 
     ultimoScrollY = window.scrollY;
 }

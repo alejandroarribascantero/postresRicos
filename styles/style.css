@@ -108,12 +108,12 @@ nav.scrolled .navbar-nav .nav-link {
 
 }
 
-.heroText > h1 {
+.heroText>h1 {
     font-size: 4.5em;
     color: #FFD700;
 }
 
-.heroText > p {
+.heroText>p {
     font-size: 2.5em;
     color: #ffffff;
 }
@@ -266,110 +266,6 @@ footer a:hover {
     color: #D4AF37;
 }
 
-/* ------------------------------------------------------------------------------------------------------- */
-/* ------------------------------------------------------------------------------------------------------- */
-
-/*Más pequeño*/
-@media (max-width: 392.9px) {
-    .heroText > h1 {
-        font-size: 2em;
-    }
-
-    .heroText > p {
-        font-size: 0.9em;
-        font-family: 'Courier New', Courier, monospace;
-    }
-
-    .carouselImage {
-        height: 400px;
-    }
-    .titulo{
-        font-size: 1.2em;
-    }
-    section .text-center h2{ /*INTRO TITULO*/
-        font-size: 1.4em;
-    }
-    .filtrosGaleria {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .botonCategoria {
-        width: 30%; /* Ajusta el ancho para que quepan 3 botones en una fila */
-        padding: 5px 10px; /* Reduce el padding */
-        font-size: 1em; /* Ajusta el tamaño de la fuente */
-        margin-bottom: 10px; /* Añade un margen inferior para separar las filas */
-        text-align: center;
-    }
-}
-
-/*IPHONE 8*/
-@media (min-width: 393px) and (max-width: 767.9px) {
-    .heroText > h1 {
-        font-size: 2em;
-    }
-
-    .heroText > p {
-        font-size: 0.9em;
-        font-family: 'Courier New', Courier, monospace;
-    }
-
-    .carouselImage {
-        height: 400px;
-    }
-    section .text-center h2{
-        font-size: 1.7em;
-    }
-    .filtrosGaleria {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .botonCategoria {
-        text-align: center;
-        width: 30%; /* Ajusta el ancho para que quepan 3 botones en una fila */
-        padding: 5px 10px; /* Reduce el padding */
-        font-size: 1em; /* Ajusta el tamaño de la fuente */
-        margin-bottom: 10px; /* Añade un margen inferior para separar las filas */
-    }
-}
-
-/* IPAD MINI */
-@media (min-width: 768px) and (max-width: 1023.9px) {
-    .heroText > h1 {
-        font-size: 4em;
-    }
-
-    .heroText > p {
-        font-size: 2.3em;
-    }
-
-    .carouselImage {
-        height: 450px;
-    }
-}
-
-/* IPAD PRO */
-@media (min-width: 1024px) and (max-width: 1439.9px) {
-    .carouselImage {
-        height: 500px;
-    }
-}
-
-/* PORTATIL */
-@media (min-width: 1440px) and (max-width: 1919.9px) {
-    .carouselImage {
-        height: 600px;
-    }
-}
-
-/* FULL HD */
-@media (min-width: 1920px) {
-    .carouselImage {
-        height: 700px;
-    }
-}
-
 .navbar-nav.menu {
     display: flex;
     align-items: center;
@@ -415,10 +311,20 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 .navbar-nav .menuItem .nav-link {
     transition: 0.75s;
 }
+
 /* galeria */
-.galeriaDeImagenes{
+.galeriaDeImagenes h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #FFD700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0);
+    font-family: "Londrina Shadow", sans-serif;
+}
+
+.galeriaDeImagenes {
     margin-top: 120px;
 }
+
 .botonCategoria {
     border: 1px solid #FFD700;
     border-radius: 20px;
@@ -429,29 +335,38 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     color: #FFD700;
     transition: background-color 0.3s, color 0.3s;
 }
+
 .botonCategoria.activo {
     background-color: #FFD700;
     color: #121212;
 }
+
 .botonCategoria:hover {
     background-color: #D4AF37;
     color: #ffffff;
 }
+
 .galeria img {
     margin-top: 5px;
-    object-fit: cover; /* Ajusta las imágenes para que ocupen el contenedor */
+    object-fit: cover;
+    /* Ajusta las imágenes para que ocupen el contenedor */
     border-radius: 10px;
-    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
-    height: 200px; /* Altura fija para todas las imágenes */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho del contenedor */
+    height: 200px;
+    /* Altura fija para todas las imágenes */
     transition: transform 0.3s, opacity 0.5s ease-in-out;
 }
+
 .galeria img:hover {
     transform: scale(1.05);
 }
+
 .galeria .col-md-3 {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
+
 .galeria .col-md-3.visible {
     opacity: 1;
 }
@@ -467,21 +382,28 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
 }
 
 .lightbox-content {
     position: relative;
     margin: auto;
     display: block;
-    width: 60%; /* Reduce el tamaño de la imagen */
-    max-width: 500px; /* Ajusta el tamaño máximo */
+    width: 60%;
+    /* Reduce el tamaño de la imagen */
+    max-width: 500px;
+    /* Ajusta el tamaño máximo */
 }
 
 .lightbox-content img {
     width: 100%;
-    max-height: 50vh; /* Ajusta la altura máxima al 80% de la altura de la ventana */
-    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
-    margin-top: 50%; /* Ajusta el margen superior */
+    max-height: 50vh;
+    /* Ajusta la altura máxima al 80% de la altura de la ventana */
+    object-fit: contain;
+    /* Asegura que la imagen mantenga su proporción */
+    margin-top: 50%;
+    /* Ajusta el margen superior */
 }
 
 .prev,
@@ -499,6 +421,8 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    font-size: 50px;
 }
 
 .next {
@@ -510,3 +434,187 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 .next:hover {
     background-color: #D4AF37;
 }
+.heroTextGaleria {
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    color: #D4AF37;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0);
+    font-family: "Londrina Shadow", sans-serif;
+
+}
+
+.heroTextGaleria>h1 {
+    font-size: 4.5em;
+    color: #FFD700;
+}
+.flechaAbajo img{
+    margin-top: 150px;
+    width: 150px;
+    animation: mover 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------- */
+
+/*Más pequeño*/
+@media (max-width: 392.9px) {
+    .heroText>h1, .heroTextGaleria>h1{
+        font-size: 2em;
+    }
+
+    .heroText>p {
+        font-size: 0.9em;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .carouselImage {
+        height: 400px;
+    }
+
+    .titulo {
+        font-size: 1.2em;
+    }
+
+    section .text-center h2 {
+        /*INTRO TITULO*/
+        font-size: 1.4em;
+    }
+
+    .filtrosGaleria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .botonCategoria {
+        width: 30%;
+        /* Ajusta el ancho para que quepan 3 botones en una fila */
+        padding: 5px 10px;
+        /* Reduce el padding */
+        font-size: 1em;
+        /* Ajusta el tamaño de la fuente */
+        margin-bottom: 10px;
+        /* Añade un margen inferior para separar las filas */
+        text-align: center;
+    }
+
+    .lightbox-content img {
+        margin-top: 30vh;
+        /* Ajusta el margen superior */
+    }
+
+    .galeriaDeImagenes h1 {
+        font-size: 50px;
+    }
+    
+}
+
+/*IPHONE 8*/
+@media (min-width: 393px) and (max-width: 767.9px) {
+    .heroText>h1, .heroTextGaleria>h1, .heroTextGaleria>h1{
+        font-size: 2em;
+    }
+
+    .heroText>p {
+        font-size: 0.9em;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .carouselImage {
+        height: 400px;
+    }
+
+    section .text-center h2 {
+        font-size: 1.7em;
+    }
+
+    .filtrosGaleria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .botonCategoria {
+        text-align: center;
+        width: 30%;
+        /* Ajusta el ancho para que quepan 3 botones en una fila */
+        padding: 5px 10px;
+        /* Reduce el padding */
+        font-size: 1em;
+        /* Ajusta el tamaño de la fuente */
+        margin-bottom: 10px;
+        /* Añade un margen inferior para separar las filas */
+    }
+
+    .lightbox-content img {
+        margin-top: 30vh;
+        /* Ajusta el margen superior */
+    }
+
+    .galeriaDeImagenes h1 {
+        font-size: 50px;
+    }
+}
+
+/* IPAD MINI */
+@media (min-width: 768px) and (max-width: 1023.9px) {
+    .heroText>h1, .heroTextGaleria>h1 {
+        font-size: 4em;
+    }
+
+    .heroText>p {
+        font-size: 2.3em;
+    }
+
+    .carouselImage {
+        height: 450px;
+    }
+
+    .galeriaDeImagenes h1 {
+        font-size: 90px;
+    }
+}
+
+/* IPAD PRO */
+@media (min-width: 1024px) and (max-width: 1439.9px) {
+    .carouselImage {
+        height: 500px;
+    }
+    .galeriaDeImagenes h1 {
+        font-size: 110px;
+    }
+}
+
+/* PORTATIL */
+@media (min-width: 1440px) and (max-width: 1919.9px) {
+    .carouselImage {
+        height: 600px;
+    }
+    .galeriaDeImagenes h1 {
+        font-size: 120px;
+    }
+}
+
+/* FULL HD */
+@media (min-width: 1920px) {
+    .carouselImage {
+        height: 700px;
+    }
+    .galeriaDeImagenes h1 {
+        font-size: 130px;
+    }
+}
+

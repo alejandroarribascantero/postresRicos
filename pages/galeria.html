@@ -65,14 +65,28 @@
             </div>
         </nav>
     </header>
+    <!-- hero -->
+    <div class="container-fluid p-0 heroe">
+        <!-- <img src="images/inicio.jpg" class="heroImage" alt="Imagen de inicio"> -->
+        <video autoplay muted loop class="heroImage">
+            <source src="../images/video-galeria-hor.mp4" type="video/mp4">
+            Tu navegador no soporta el video HTML5.
+        </video>
+        <div class="overlay"></div>
+        <div class="heroTextGaleria">
+            <h1>DISFRUTA DE NUESTRA GALERIA</h1>
+            <a class="flechaAbajo" href="#galeriaDeImagenes"><img src="../images/flechaAbajo.png" alt=""></a>
+        </div>
+    </div>
     <!-- Galeria -->
     <section class="container galeriaDeImagenes" id="galeriaDeImagenes">
+        <h1>GALERIA DE FOTOS</h1>
         <div class="d-flex justify-content-center mb-4 filtrosGaleria">
             <span class="botonCategoria activo" onclick="filtrarGaleria('todas')">Todas</span>
-            <span class="botonCategoria" onclick="filtrarGaleria('hermosas')">Hermosas</span>
-            <span class="botonCategoria" onclick="filtrarGaleria('creativas')">Creativas</span>
-            <span class="botonCategoria" onclick="filtrarGaleria('geniales')">Geniales</span>
-            <span class="botonCategoria" onclick="filtrarGaleria('asombrosas')">Asombrosas</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('clasicos')">Clásicos</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('tartas')">Tartas</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('tematicos')">Temáticos</span>
+            <span class="botonCategoria" onclick="filtrarGaleria('tropicales')">Tropicales</span>
         </div>
         <div class="row galeria" id="galeria">
             <!-- Las imágenes se cargarán aquí dinámicamente -->
