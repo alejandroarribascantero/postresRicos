@@ -131,6 +131,101 @@ function cambiarImagen(direccion) {
     document.getElementById('lightbox-img').src = imagenes[currentImageIndex].src;
 }
 
+function validacionForm() {
+    const form = document.querySelector('.formContacto');
+    const boton = document.getElementById('botonForm');
+
+
+    boton.addEventListener('click', function (event) {
+        let esValido = true;
+
+        const inputs = form.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            let errorText = input.nextElementSibling;
+            if (!errorText || !errorText.classList.contains('error-text')) {
+                errorText = document.createElement('div');
+                errorText.classList.add('error-text');
+                input.parentNode.insertBefore(errorText, input.nextSibling);
+            }
+
+            if (input.type === 'email' && !/\S+@\S+\.\S+/.test(input.value)) {
+                esValido = false;
+                input.classList.add('input-error');
+                errorText.textContent = 'Por favor, introduce un correo electrónico válido';
+                input.value = '';
+            }
+
+            if (input.type === 'tel' && !/^\d{9}$/.test(input.value)) {
+                esValido = false;
+                input.classList.add('input-error');
+                errorText.textContent = 'Por favor, introduce un número de teléfono válido';
+                input.value = '';
+            }
+            if (!input.value.trim()) {
+                esValido = false;
+                input.classList.add('input-error');
+                errorText.textContent = 'Este campo es obligatorio';
+                input.value = '';
+            } else {
+                input.classList.remove('input-error');
+                errorText.textContent = '';
+            }
+        });
+
+        if (!esValido) {
+            event.preventDefault(); //Para que no se envie el formulario
+        }
+    });
+}
+/* FUNCIONES COOKIES */
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+function eraseCookie(name) {
+    document.cookie = name + '=; Max-Age=-99999999;';
+}
+
+function leerCookie() {
+    if (getCookie('aceptar_cookie') != '1') {
+        document.getElementById('barraaceptacion').style.display = 'block';
+    }
+    else {
+        document.getElementById('barraaceptacion').style.display = 'none';
+    }
+}
+
+function ponerCookie() {
+    setCookie('aceptar_cookie', '1', 365);
+    document.getElementById('barraaceptacion').style.display = 'none';
+}
+
+$(document).ready(function () {
+    leerCookie();
+});
+
+$(document).ready(function () {
+    $("#contenedor-menu input").click(function () {
+        ponerCookie();
+    });
+});
+
+
 // Inicialización
 document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', manejarScroll);
@@ -138,4 +233,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', actualizarLineaMagica);
     window.addEventListener('resize', actualizarLineaMagica);
     cargarImagenes();
+    validacionForm();
+
 });
