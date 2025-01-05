@@ -139,7 +139,7 @@ section.container {
     color: #ffffff;
 }
 
-section p {
+.introduccion p {
     font-size: 1.2rem;
     color: #a8a8a8;
     line-height: 1.6;
@@ -149,7 +149,7 @@ section p {
 section li {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
-    color: #FFD700;
+    color: #a8a8a8;
 }
 
 section p strong {
@@ -350,12 +350,9 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 .galeria img {
     margin-top: 5px;
     object-fit: cover;
-    /* Ajusta las imágenes para que ocupen el contenedor */
     border-radius: 10px;
     width: 100%;
-    /* Asegura que ocupe todo el ancho del contenedor */
     height: 200px;
-    /* Altura fija para todas las imágenes */
     transition: transform 0.3s, opacity 0.5s ease-in-out;
 }
 
@@ -392,9 +389,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     margin: auto;
     display: block;
     width: 60%;
-    /* Reduce el tamaño de la imagen */
     max-width: 500px;
-    /* Ajusta el tamaño máximo */
 }
 
 .lightbox-content img {
@@ -531,16 +526,16 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     color: #FFD700;
 }
 
-.list-unstyled {
+.datosPersonales {
     color: #FFD700;
 }
 
-.list-unstyled a {
+.datosPersonales a {
     color: inherit;
     text-decoration: none;
 }
 
-.list-unstyled a:hover {
+.datosPersonales a:hover {
     cursor: pointer;
     color: #FFD700;
     -webkit-text-shadow: 0 0 10px #D4AF37, 0 0 10px #FFD700;
@@ -550,7 +545,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     text-shadow: 0 0 10px #D4AF37, 0 0 10px #FFD700;
 }
 
-.list-unstyled strong {
+.datosPersonales strong {
     color: white;
 }
 
@@ -565,7 +560,6 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
 .infoContacto .col-lg-5 {
     margin-bottom: 30px;
-    /* background-color: #2a2a2a; */
     padding: 15px;
     border-radius: 1%;
 }
@@ -581,7 +575,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     margin-bottom: 10px;
     color: #FFD700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0);
-    font-family: "Londrina Shadow", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 
@@ -656,7 +650,6 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
 /* ------------------------------------------------------------------------------------------------------- */
 /* RECETAS*/
-/* Estilo base del timeline */
 #timeLineRecetas>h1 {
     text-align: center;
     margin-bottom: 10px;
@@ -668,54 +661,36 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
 .timeLine {
     position: relative;
-    /* Para posicionar el pseudo-elemento */
     padding-left: 30px;
-    /* Espacio para la línea */
 }
 
 .timeLine::before {
     content: '';
     position: absolute;
     top: 0;
-    /* Comienza desde la parte superior */
     left: 15px;
-    /* Ajusta la posición horizontal de la línea */
     bottom: 0;
-    /* Se extiende hasta la parte inferior */
     width: 2px;
-    /* Ancho de la línea */
     background-color: #FFD700;
-    /* Color de la línea */
     z-index: 1;
-    /* Asegura que la línea esté detrás del contenido */
 }
 
 .receta {
     position: relative;
-    /* Para posicionar los puntos */
     margin-bottom: 20px;
-    /* Espacio entre recetas */
     padding-left: 20px;
-    /* Espacio a la izquierda para el texto */
 }
 
 .receta::before {
     content: '';
     position: absolute;
     left: 5px;
-    /* Ajusta la posición horizontal del punto */
     top: 15px;
-    /* Ajusta la posición vertical del punto */
     width: 10px;
-    /* Ancho del punto */
     height: 10px;
-    /* Alto del punto */
     background-color: #FFD700;
-    /* Color del punto */
     border-radius: 50%;
-    /* Hace que el punto sea redondo */
     z-index: 2;
-    /* Asegura que el punto esté por encima de la línea */
 }
 
 .receta>div>img {
@@ -731,35 +706,23 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
 .paso {
     font-size: 16px;
-    /* Tamaño de fuente */
     margin-bottom: 10px;
-    /* Espacio entre pasos */
     display: flex;
-    /* Usar flexbox para alinear elementos */
     align-items: flex-start;
-    /* Alinear el número de paso y el texto al inicio */
 }
 
 .numero-paso {
     font-weight: bold;
-    /* Estilo del número de paso */
     color: #FFD700;
-    /* Color del número de paso (mismo que el resto de la página) */
     width: 30px;
-    /* Ancho fijo para el número de paso */
     text-align: right;
-    /* Alinear el texto a la derecha */
     margin-right: 10px;
-    /* Espacio entre el número y el texto */
 }
 
 .texto-paso {
     flex: 1;
-    /* Permite que el texto ocupe el espacio restante */
     line-height: 1.5;
-    /* Mejora la legibilidad del texto */
     color: #a8a8a8;
-    /* Color del texto (coincide con el resto de la página) */
 }
 
 /* ------------------------------------------------------------------------------------------------------- */
@@ -817,7 +780,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 }
 
 /* ------------------------------------------------------------------------------------------------------- */
-/* ------------------------------------------------------------------------------------------------------- */
+/* BANNER*/
 .banner {
     position: fixed;
     bottom: 0;
@@ -889,7 +852,6 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     }
 
     section .text-center h2 {
-        /*INTRO TITULO*/
         font-size: 1.4em;
     }
 
@@ -901,19 +863,14 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
     .botonCategoria {
         width: 30%;
-        /* Ajusta el ancho para que quepan 3 botones en una fila */
         padding: 5px 10px;
-        /* Reduce el padding */
         font-size: 1em;
-        /* Ajusta el tamaño de la fuente */
         margin-bottom: 10px;
-        /* Añade un margen inferior para separar las filas */
         text-align: center;
     }
 
     .lightbox-content img {
         margin-top: 30vh;
-        /* Ajusta el margen superior */
     }
 
     .galeriaDeImagenes h1,
@@ -962,18 +919,13 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .botonCategoria {
         text-align: center;
         width: 30%;
-        /* Ajusta el ancho para que quepan 3 botones en una fila */
         padding: 5px 10px;
-        /* Reduce el padding */
         font-size: 1em;
-        /* Ajusta el tamaño de la fuente */
         margin-bottom: 10px;
-        /* Añade un margen inferior para separar las filas */
     }
 
     .lightbox-content img {
         margin-top: 30vh;
-        /* Ajusta el margen superior */
     }
 
     .galeriaDeImagenes h1,

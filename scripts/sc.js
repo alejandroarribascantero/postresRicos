@@ -147,33 +147,36 @@ function validacionForm() {
                 errorText.classList.add('error-text');
                 input.parentNode.insertBefore(errorText, input.nextSibling);
             }
-
-            if (input.type === 'email' && !/\S+@\S+\.\S+/.test(input.value)) {
-                esValido = false;
-                input.classList.add('input-error');
-                errorText.textContent = 'Por favor, introduce un correo electrónico válido';
-                input.value = '';
-            }
-
-            if (input.type === 'tel' && !/^\d{9}$/.test(input.value)) {
-                esValido = false;
-                input.classList.add('input-error');
-                errorText.textContent = 'Por favor, introduce un número de teléfono válido';
-                input.value = '';
-            }
+            
+            // Validación del campo obligatorio
             if (!input.value.trim()) {
                 esValido = false;
                 input.classList.add('input-error');
                 errorText.textContent = 'Este campo es obligatorio';
                 input.value = '';
             } else {
-                input.classList.remove('input-error');
-                errorText.textContent = '';
+                // Validaciones específicas
+                if (input.type === 'email' && !/\S+@\S+\.\S+/.test(input.value)) {
+                    esValido = false;
+                    input.classList.add('input-error');
+                    errorText.textContent = 'Por favor, introduce un correo electrónico válido';
+                    input.value = '';
+                } else if (input.type === 'tel' && !/^\d{9}$/.test(input.value)) {
+                    esValido = false;
+                    input.classList.add('input-error');
+                    errorText.textContent = 'Por favor, introduce un número de teléfono válido';
+                    input.value = '';
+                } else {
+                    // Si pasa todas las validaciones, limpia errores
+                    input.classList.remove('input-error');
+                    errorText.textContent = '';
+                }
             }
+            
         });
 
         if (!esValido) {
-            event.preventDefault(); //Para que no se envie el formulario
+            event.preventDefault();
         }
     });
 }
@@ -230,13 +233,13 @@ function recetas() {
     fetch('../recetas.json')
         .then(response => response.json())
         .then(data => {
-            const timeLine = document.querySelector('.timeLine'); // Asegúrate de que este selector apunte al contenedor correcto
+            const timeLine = document.querySelector('.timeLine');
             data.forEach(receta => {
                 const recetaDiv = document.createElement('div');
                 recetaDiv.classList.add('receta');
 
-                const recetaId = receta.titulo.replace(/\s+/g, '_').toLowerCase(); // Reemplaza espacios por guiones bajos y convierte a minúsculas
-                recetaDiv.id = recetaId; // Asigna el ID
+                const recetaId = receta.titulo.replace(/\s+/g, '_').toLowerCase();
+                recetaDiv.id = recetaId;
 
                 const titulo = document.createElement('h2');
                 titulo.textContent = receta.titulo;
@@ -262,23 +265,15 @@ function recetas() {
 
                 const descripcion = document.createElement('div');
                 descripcion.classList.add('col-12', 'col-lg-6');
-
-                // Crea un elemento para cada paso
                 receta.descripcion.forEach((paso, index) => {
                     const pasoDiv = document.createElement('div');
                     pasoDiv.classList.add('paso');
-
-                    // Crea un span para el número de paso
                     const numeroPaso = document.createElement('span');
                     numeroPaso.classList.add('numero-paso');
-                    numeroPaso.textContent = `${index + 1}. `; // Agrega el número de paso
-
-                    // Crea un span para el texto del paso
+                    numeroPaso.textContent = `${index + 1}. `;
                     const textoPaso = document.createElement('span');
                     textoPaso.classList.add('texto-paso');
-                    textoPaso.innerHTML = paso; // Asigna el contenido del paso
-
-                    // Agrega los spans al div del paso
+                    textoPaso.innerHTML = paso;
                     pasoDiv.appendChild(numeroPaso);
                     pasoDiv.appendChild(textoPaso);
                     descripcion.appendChild(pasoDiv);
@@ -316,6 +311,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', actualizarLineaMagica);
     cargarImagenes();
     validacionForm();
-    
+
 
 });

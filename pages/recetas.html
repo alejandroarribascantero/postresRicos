@@ -68,7 +68,6 @@
 
     <!-- hero -->
     <div class="container-fluid p-0 heroe">
-        <!-- <img src="images/inicio.jpg" class="heroImage" alt="Imagen de inicio"> -->
         <video autoplay muted loop class="heroImage">
             <source src="../images/video-recetas-hor.mp4" type="video/mp4">
             Tu navegador no soporta el video HTML5.
@@ -79,14 +78,14 @@
             <a class="flechaAbajo" href="#timeLineRecetas"><img src="../images/flechaAbajo.png" alt=""></a>
         </div>
     </div>
-    
+
     <section class="container" id="timeLineRecetas">
         <h1>Algunas de nuestras recetas</h1>
         <div class="timeLine">
             <img src="" alt="">
         </div>
     </section>
-    
+
     <div id="banner" class="banner">
         <span class="close" onclick="ocultarBanner()">×</span>
         <p>¡Bienvenido a Flan-Tastico! Suscríbete a nuestra newsletter:</p>
@@ -95,13 +94,43 @@
             <button type="submit">Suscribirse</button>
         </form>
     </div>
-    
+    <footer class="py-4">
+        <div class="container">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="../index.html" class="px-2">Inicio</a></li>
+                <li class="nav-item"><a href="galeria.html" class="px-2">Galería</a></li>
+                <li class="nav-item"><a href="recetas.html" class="px-2">Recetas</a></li>
+                <li class="nav-item"><a href="contacto.html" class="px-2">Contacto</a></li>
+            </ul>
+            <div class="text-center mb-3">
+                <a href="https://www.facebook.com" target="_blank" class="px-2"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="px-2"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="px-2"><i class="bi bi-twitter"></i></a>
+            </div>
+            <p class="text-center mb-0">© 2024 Flan-Tastico</p>
+            <p class="text-center mb-0">Usamos cookies para mejorar tu experiencia. <a href="pages/leermas.html">Leer
+                    más</a>.</p>
+        </div>
+    </footer>
+    <div class="cookieAviso" id="barraaceptacion">
+        <div class="cookieAceptar" id="contenedor-menu">
+            <img src="../images/logo.svg" alt="Logo de Flan-Tastico" class="cookieLogo">
+            <h2 class="cookieTitulo">Flan-Tastico</h2>
+            <p class="cookieMensaje">
+                Usamos cookies y datos para mejorar tu experiencia en el sitio web. Si continúas navegando, aceptas el uso de cookies. 
+                <a href="leermas.html" target="_blank" class="">Leer más</a>.
+            </p>
+            <form action="#" method="post">
+                <input type="button" value="Aceptar Cookies" id="acceptCookiesBtn" class="btnAceptarCookies">
+            </form>
+        </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="../scripts/sc.js"></script>
+
 </body>
 
 </html>
