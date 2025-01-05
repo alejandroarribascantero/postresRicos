@@ -650,6 +650,49 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 }
 
 /* ------------------------------------------------------------------------------------------------------- */
+/* RECETAS*/
+/* Estilo base del timeline */
+
+.timeLine {
+    position: relative; /* Para posicionar el pseudo-elemento */
+    padding-left: 30px; /* Espacio para la línea */
+}
+
+.timeLine::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Comienza desde la parte superior */
+    left: 15px; /* Ajusta la posición horizontal de la línea */
+    bottom: 0; /* Se extiende hasta la parte inferior */
+    width: 2px; /* Ancho de la línea */
+    background-color: #FFD700; /* Color de la línea */
+    z-index: 1; /* Asegura que la línea esté detrás del contenido */
+}
+
+.receta {
+    position: relative; /* Para posicionar los puntos */
+    margin-bottom: 20px; /* Espacio entre recetas */
+    padding-left: 20px; /* Espacio a la izquierda para el texto */
+}
+
+.receta::before {
+    content: '';
+    position: absolute;
+    left: 5px; /* Ajusta la posición horizontal del punto */
+    top: 20px; /* Ajusta la posición vertical del punto */
+    width: 10px; /* Ancho del punto */
+    height: 10px; /* Alto del punto */
+    background-color: #FFD700; /* Color del punto */
+    border-radius: 50%; /* Hace que el punto sea redondo */
+    z-index: 2; /* Asegura que el punto esté por encima de la línea */
+}
+.receta > div > img{
+    height: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
 /* COOKIES*/
 
 .cookieAviso {
@@ -704,6 +747,48 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 }
 /* ------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*Más pequeño*/
 @media (max-width: 392.9px) {
@@ -972,4 +1057,24 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .infoContacto h1 {
         font-size: 130px;
     }
+}
+
+.paso {
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Espacio entre pasos */
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: flex-start; /* Alinear el número de paso y el texto al inicio */
+}
+
+.numero-paso {
+    font-weight: bold; /* Estilo del número de paso */
+    color: #FFD700; /* Color del número de paso */
+    width: 30px; /* Ancho fijo para el número de paso */
+    text-align: right; /* Alinear el texto a la derecha */
+    margin-right: 10px; /* Espacio entre el número y el texto */
+}
+
+.texto-paso {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+    line-height: 1.5; /* Mejora la legibilidad del texto */
 }

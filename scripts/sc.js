@@ -226,13 +226,84 @@ $(document).ready(function () {
 });
 
 
+function recetas() {
+    fetch('../recetas.json')
+        .then(response => response.json())
+        .then(data => {
+            const timeLine = document.querySelector('.timeLine'); // Asegúrate de que este selector apunte al contenedor correcto
+            data.forEach(receta => {
+                const recetaDiv = document.createElement('div');
+                recetaDiv.classList.add('receta');
+
+                const recetaId = receta.titulo.replace(/\s+/g, '_').toLowerCase(); // Reemplaza espacios por guiones bajos y convierte a minúsculas
+                recetaDiv.id = recetaId; // Asigna el ID
+
+                const titulo = document.createElement('h2');
+                titulo.textContent = receta.titulo;
+
+                const rowDiv = document.createElement('div');
+                rowDiv.classList.add('row');
+
+                if (receta.video) {
+                    const video = document.createElement('video');
+                    video.controls = true;
+                    video.classList.add('col-12', 'col-lg-6');
+                    const source = document.createElement('source');
+                    source.src = receta.video;
+                    source.type = 'video/mp4';
+                    video.appendChild(source);
+                    rowDiv.appendChild(video);
+                } else {
+                    const img = document.createElement('img');
+                    img.src = receta.imagen;
+                    img.classList.add('col-12', 'col-lg-6');
+                    rowDiv.appendChild(img);
+                }
+
+                const descripcion = document.createElement('div');
+                descripcion.classList.add('col-12', 'col-lg-6');
+
+                // Crea un elemento para cada paso
+                receta.descripcion.forEach((paso, index) => {
+                    const pasoDiv = document.createElement('div');
+                    pasoDiv.classList.add('paso');
+
+                    // Crea un span para el número de paso
+                    const numeroPaso = document.createElement('span');
+                    numeroPaso.classList.add('numero-paso');
+                    numeroPaso.textContent = `${index + 1}. `; // Agrega el número de paso
+
+                    // Crea un span para el texto del paso
+                    const textoPaso = document.createElement('span');
+                    textoPaso.classList.add('texto-paso');
+                    textoPaso.innerHTML = paso; // Asigna el contenido del paso
+
+                    // Agrega los spans al div del paso
+                    pasoDiv.appendChild(numeroPaso);
+                    pasoDiv.appendChild(textoPaso);
+                    descripcion.appendChild(pasoDiv);
+                });
+
+                rowDiv.appendChild(descripcion);
+                recetaDiv.appendChild(titulo);
+                recetaDiv.appendChild(rowDiv);
+                timeLine.appendChild(recetaDiv);
+            });
+        })
+        .catch(error => console.error('Error al cargar el JSON:', error));
+}
+
+
+
 // Inicialización
 document.addEventListener('DOMContentLoaded', function () {
+    recetas();
     window.addEventListener('scroll', manejarScroll);
     window.addEventListener('mousemove', manejarMouseMove);
     window.addEventListener('load', actualizarLineaMagica);
     window.addEventListener('resize', actualizarLineaMagica);
     cargarImagenes();
     validacionForm();
+    
 
 });

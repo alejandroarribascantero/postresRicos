@@ -1,0 +1,96 @@
+[
+    {
+        "titulo": "Flan de huevo",
+        "descripcion": [
+            "500 ml de leche.",
+            "4 huevos.",
+            "100 gramos de azúcar.",
+            "1 cucharadita de esencia de vainilla.",
+            "Carameliza el molde con azúcar y caliéntalo a fuego medio hasta que se derrita.",
+            "Bate los huevos con el azúcar y agrega la leche, la esencia de vainilla.",
+            "Vierte la mezcla en el molde caramelizado y cocina al baño maría durante 45 minutos a 180 grados Celsius.",
+            "Deja enfriar antes de desmoldar y servir."
+        ],
+        "imagen": "../images/flan-inicio.jpg"
+    },
+    {
+        "titulo": "Tarta de queso",
+        "descripcion": [
+            "200 gramos de galletas Digestive trituradas.",
+            "100 gramos de mantequilla derretida.",
+            "Mezcla las galletas trituradas con la mantequilla y cubre el fondo de un molde.",
+            "500 gramos de queso crema.",
+            "200 gramos de nata para montar.",
+            "150 gramos de azúcar.",
+            "3 huevos.",
+            "1 cucharadita de esencia de vainilla.",
+            "Mezcla todos los ingredientes hasta obtener una mezcla homogénea.",
+            "Vierte sobre la base de galletas y hornea a 160 grados Celsius durante 50 minutos.",
+            "Deja enfriar y refrigera durante al menos 4 horas antes de servir."
+        ],
+        "imagen": "../images/cheesecake-inicio.jpg"
+    },
+    {
+        "titulo": "Crepe con frambuesa",
+        "descripcion": [
+            "150 gramos de harina.",
+            "1 huevo.",
+            "200 ml de leche.",
+            "1 cucharadita de azúcar.",
+            "1 cucharada de mantequilla derretida.",
+            "Bate todos los ingredientes hasta obtener una mezcla suave.",
+            "Calienta una sartén y vierte un poco de la mezcla, cocinando por ambos lados hasta que estén doradas.",
+            "Sirve con frambuesas frescas y un toque de azúcar glas."
+        ],
+        "video": "../images/pancake.mp4"
+    },
+    {
+        "titulo": "Mouse de chocolate",
+        "descripcion": [
+            "200 gramos de chocolate negro.",
+            "300 ml de nata para montar.",
+            "4 claras de huevo.",
+            "50 gramos de azúcar.",
+            "Derrite el chocolate al baño maría.",
+            "Monta las claras de huevo con el azúcar hasta que estén a punto de nieve.",
+            "Bate la nata hasta que esté firme.",
+            "Incorpora el chocolate derretido a la nata y mezcla con suavidad.",
+            "Añade las claras montadas con movimientos envolventes.",
+            "Refrigera durante al menos 3 horas antes de servir."
+        ],
+        "imagen": "../images/mouse-inicio.jpg"
+    },
+    {
+        "titulo": "Churros",
+        "descripcion": [
+            "250 gramos de harina.",
+            "250 ml de agua.",
+            "1 cucharada de azúcar.",
+            "1 cucharadita de sal.",
+            "1 cucharada de aceite.",
+            "Calienta el agua con el azúcar, la sal y el aceite hasta que hiervan.",
+            "Incorpora la harina y mezcla hasta obtener una masa homogénea.",
+            "Coloca la masa en una manga pastelera y fríe en aceite caliente en forma de churros.",
+            "Escurre sobre papel absorbente y espolvorea con azúcar."
+        ],
+        "imagen": "../images/churrosRecetas.jpg"
+    },
+    {
+        "titulo": "Galletas",
+        "descripcion": [
+            "200 gramos de mantequilla.",
+            "100 gramos de azúcar.",
+            "1 huevo.",
+            "200 gramos de harina.",
+            "1 cucharadita de levadura en polvo.",
+            "100 gramos de chips de chocolate.",
+            "Bate la mantequilla con el azúcar hasta que esté cremosa.",
+            "Añade el huevo y mezcla bien.",
+            "Tamiza la harina con la levadura y agrégala a la mezcla.",
+            "Incorpora los chips de chocolate.",
+            "Forma bolitas de masa y colócalas en una bandeja para hornear.",
+            "Hornea a 180 grados Celsius durante 10-12 minutos."
+        ],
+        "video": "../images/galleta.mp4"
+    }
+]
