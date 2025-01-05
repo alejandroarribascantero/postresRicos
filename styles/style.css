@@ -318,7 +318,8 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     margin-bottom: 10px;
     color: #FFD700;
     text-shadow: 2px 2px 5px rgba(0, 0, 0);
-    font-family: "Londrina Shadow", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+    border-bottom: solid;
 }
 
 .galeriaDeImagenes {
@@ -529,13 +530,16 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     font-size: 2rem;
     color: #FFD700;
 }
+
 .list-unstyled {
     color: #FFD700;
 }
+
 .list-unstyled a {
     color: inherit;
     text-decoration: none;
 }
+
 .list-unstyled a:hover {
     cursor: pointer;
     color: #FFD700;
@@ -545,6 +549,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     -o-text-shadow: 0 0 10px #D4AF37, 0 0 10px #FFD700;
     text-shadow: 0 0 10px #D4AF37, 0 0 10px #FFD700;
 }
+
 .list-unstyled strong {
     color: white;
 }
@@ -652,44 +657,109 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 /* ------------------------------------------------------------------------------------------------------- */
 /* RECETAS*/
 /* Estilo base del timeline */
+#timeLineRecetas>h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #FFD700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0);
+    font-family: 'Bebas Neue', sans-serif;
+    border-bottom: solid;
+}
 
 .timeLine {
-    position: relative; /* Para posicionar el pseudo-elemento */
-    padding-left: 30px; /* Espacio para la línea */
+    position: relative;
+    /* Para posicionar el pseudo-elemento */
+    padding-left: 30px;
+    /* Espacio para la línea */
 }
 
 .timeLine::before {
     content: '';
     position: absolute;
-    top: 0; /* Comienza desde la parte superior */
-    left: 15px; /* Ajusta la posición horizontal de la línea */
-    bottom: 0; /* Se extiende hasta la parte inferior */
-    width: 2px; /* Ancho de la línea */
-    background-color: #FFD700; /* Color de la línea */
-    z-index: 1; /* Asegura que la línea esté detrás del contenido */
+    top: 0;
+    /* Comienza desde la parte superior */
+    left: 15px;
+    /* Ajusta la posición horizontal de la línea */
+    bottom: 0;
+    /* Se extiende hasta la parte inferior */
+    width: 2px;
+    /* Ancho de la línea */
+    background-color: #FFD700;
+    /* Color de la línea */
+    z-index: 1;
+    /* Asegura que la línea esté detrás del contenido */
 }
 
 .receta {
-    position: relative; /* Para posicionar los puntos */
-    margin-bottom: 20px; /* Espacio entre recetas */
-    padding-left: 20px; /* Espacio a la izquierda para el texto */
+    position: relative;
+    /* Para posicionar los puntos */
+    margin-bottom: 20px;
+    /* Espacio entre recetas */
+    padding-left: 20px;
+    /* Espacio a la izquierda para el texto */
 }
 
 .receta::before {
     content: '';
     position: absolute;
-    left: 5px; /* Ajusta la posición horizontal del punto */
-    top: 20px; /* Ajusta la posición vertical del punto */
-    width: 10px; /* Ancho del punto */
-    height: 10px; /* Alto del punto */
-    background-color: #FFD700; /* Color del punto */
-    border-radius: 50%; /* Hace que el punto sea redondo */
-    z-index: 2; /* Asegura que el punto esté por encima de la línea */
+    left: 5px;
+    /* Ajusta la posición horizontal del punto */
+    top: 15px;
+    /* Ajusta la posición vertical del punto */
+    width: 10px;
+    /* Ancho del punto */
+    height: 10px;
+    /* Alto del punto */
+    background-color: #FFD700;
+    /* Color del punto */
+    border-radius: 50%;
+    /* Hace que el punto sea redondo */
+    z-index: 2;
+    /* Asegura que el punto esté por encima de la línea */
 }
-.receta > div > img{
+
+.receta>div>img {
     height: 100%;
     max-height: 350px;
     object-fit: cover;
+}
+
+.receta>h2 {
+    color: #FFD700;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.paso {
+    font-size: 16px;
+    /* Tamaño de fuente */
+    margin-bottom: 10px;
+    /* Espacio entre pasos */
+    display: flex;
+    /* Usar flexbox para alinear elementos */
+    align-items: flex-start;
+    /* Alinear el número de paso y el texto al inicio */
+}
+
+.numero-paso {
+    font-weight: bold;
+    /* Estilo del número de paso */
+    color: #FFD700;
+    /* Color del número de paso (mismo que el resto de la página) */
+    width: 30px;
+    /* Ancho fijo para el número de paso */
+    text-align: right;
+    /* Alinear el texto a la derecha */
+    margin-right: 10px;
+    /* Espacio entre el número y el texto */
+}
+
+.texto-paso {
+    flex: 1;
+    /* Permite que el texto ocupe el espacio restante */
+    line-height: 1.5;
+    /* Mejora la legibilidad del texto */
+    color: #a8a8a8;
+    /* Color del texto (coincide con el resto de la página) */
 }
 
 /* ------------------------------------------------------------------------------------------------------- */
@@ -745,50 +815,57 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 .btnAceptarCookies:hover {
     background-color: #D4AF37;
 }
+
 /* ------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffbf00;
+    color: #121212;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
 
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #121212;
+}
 
+.banner form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
 
+.banner input[type="email"] {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
+.banner button {
+    padding: 5px 10px;
+    background-color: #FFD700;
+    border: none;
+    color: #121212;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.banner button:hover {
+    background-color: #D4AF37;
+}
 
 /*Más pequeño*/
 @media (max-width: 392.9px) {
@@ -842,6 +919,10 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .galeriaDeImagenes h1,
     .infoContacto h1 {
         font-size: 50px;
+    }
+
+    #timeLineRecetas h1 {
+        font-size: 37px;
     }
 
     .heroTextContacto h1 {
@@ -900,6 +981,10 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         font-size: 50px;
     }
 
+    #timeLineRecetas h1 {
+        font-size: 37px;
+    }
+
     .heroTextContacto {
         top: 20%;
         left: 50%;
@@ -935,6 +1020,16 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         font-size: 2rem;
         color: #FFD700;
     }
+
+    .receta::before {
+        top: 10px;
+    }
+
+    .receta>div>div {
+        margin-top: 10px;
+    }
+
+
 }
 
 /* IPAD MINI */
@@ -956,6 +1051,10 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .galeriaDeImagenes h1,
     .infoContacto h1 {
         font-size: 90px;
+    }
+
+    #timeLineRecetas h1 {
+        font-size: 71px;
     }
 
     .heroTextContacto {
@@ -989,6 +1088,23 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         font-size: 2rem;
         color: #FFD700;
     }
+
+    .receta::before {
+        top: 10px;
+    }
+
+    .receta>div>div {
+        margin-top: 10px;
+    }
+
+    .banner {
+        bottom: auto;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 350px;
+        text-align: left;
+    }
 }
 
 /* IPAD PRO */
@@ -1000,6 +1116,10 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .galeriaDeImagenes h1,
     .infoContacto h1 {
         font-size: 110px;
+    }
+
+    #timeLineRecetas h1 {
+        font-size: 90px;
     }
 
     .heroTextContacto {
@@ -1033,6 +1153,19 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         font-size: 2rem;
         color: #FFD700;
     }
+
+    .receta::before {
+        top: 10px;
+    }
+
+    .banner {
+        bottom: auto;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 350px;
+        text-align: left;
+    }
 }
 
 /* PORTATIL */
@@ -1042,8 +1175,18 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     }
 
     .galeriaDeImagenes h1,
-    .infoContacto h1 {
+    .infoContacto h1,
+    #timeLineRecetas h1 {
         font-size: 120px;
+    }
+
+    .banner {
+        bottom: auto;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 350px;
+        text-align: left;
     }
 }
 
@@ -1054,27 +1197,17 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     }
 
     .galeriaDeImagenes h1,
-    .infoContacto h1 {
+    .infoContacto h1,
+    #timeLineRecetas h1 {
         font-size: 130px;
     }
-}
 
-.paso {
-    font-size: 16px; /* Tamaño de fuente */
-    margin-bottom: 10px; /* Espacio entre pasos */
-    display: flex; /* Usar flexbox para alinear elementos */
-    align-items: flex-start; /* Alinear el número de paso y el texto al inicio */
-}
-
-.numero-paso {
-    font-weight: bold; /* Estilo del número de paso */
-    color: #FFD700; /* Color del número de paso */
-    width: 30px; /* Ancho fijo para el número de paso */
-    text-align: right; /* Alinear el texto a la derecha */
-    margin-right: 10px; /* Espacio entre el número y el texto */
-}
-
-.texto-paso {
-    flex: 1; /* Permite que el texto ocupe el espacio restante */
-    line-height: 1.5; /* Mejora la legibilidad del texto */
+    .banner {
+        bottom: auto;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 350px;
+        text-align: left;
+    }
 }

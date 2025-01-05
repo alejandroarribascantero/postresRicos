@@ -293,7 +293,19 @@ function recetas() {
         .catch(error => console.error('Error al cargar el JSON:', error));
 }
 
+function ocultarBanner() {
+    const banner = document.getElementById('banner');
+    banner.style.display = 'none';
+}
 
+function enviarCorreo(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    console.log(`Correo electrónico enviado: ${email}`);
+    ocultarBanner();
+    alert('¡Gracias por suscribirte a nuestra newsletter!');
+    return false;
+}
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function () {
