@@ -847,7 +847,8 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 /*Más pequeño*/
 @media (max-width: 392.9px) {
 
-    .Text>h1,
+    .heroText>h1,
+    .heroTextGaleria>h1,
     .heroTextGaleria>h1 {
         font-size: 2em;
     }
@@ -861,12 +862,8 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         height: 400px;
     }
 
-    .titulo {
-        font-size: 1.2em;
-    }
-
     section .text-center h2 {
-        font-size: 1.4em;
+        font-size: 1.7em;
     }
 
     .filtrosGaleria {
@@ -876,16 +873,13 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     }
 
     .botonCategoria {
+        text-align: center;
         width: 30%;
         padding: 5px 10px;
         font-size: 1em;
         margin-bottom: 10px;
-        text-align: center;
     }
 
-    .lightbox-content img {
-        margin-top: 30vh;
-    }
 
     .galeriaDeImagenes h1,
     .infoContacto h1 {
@@ -896,9 +890,49 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         font-size: 37px;
     }
 
+    .heroTextContacto {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+    }
+
     .heroTextContacto h1 {
-        font-size: 1.5em;
+        font-size: 5.5em;
         line-height: 0.9;
+    }
+
+    .correoContacto {
+        top: 43%;
+        transform: translate(-3%);
+    }
+
+    .correoContacto i {
+        display: none;
+    }
+
+    .heroImageContacto {
+        width: 390px;
+    }
+
+    .social-icons {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: flex;
+        transform: translate(-50%, -50%);
+    }
+
+    .social-icons i {
+        font-size: 2rem;
+        color: #FFD700;
+    }
+
+    .receta::before {
+        top: 10px;
+    }
+
+    .receta>div>div {
+        margin-top: 10px;
     }
 }
 
