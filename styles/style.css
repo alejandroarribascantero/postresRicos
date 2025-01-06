@@ -934,6 +934,9 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .receta>div>div {
         margin-top: 10px;
     }
+    .titulo {
+        font-size: 1.4em;
+    }
 }
 
 /*IPHONE 8*/
