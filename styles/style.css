@@ -132,6 +132,7 @@ nav.scrolled .navbar-nav .nav-link {
 
 /* Recetas Inicio */
 section.container {
+    margin-top: 20px;
     padding: 2rem 1rem;
     background-color: #1e1e1e;
     border-radius: 8px;
@@ -146,17 +147,17 @@ section.container {
     text-align: justify;
 }
 
-section li {
+.introduccion li {
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     color: #a8a8a8;
 }
 
-section p strong {
+.introduccion p strong {
     color: #ffffff;
 }
 
-section li strong {
+.introduccion li strong {
     color: #ffffff;
 }
 
@@ -385,7 +386,10 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 }
 
 .lightbox-content {
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin: auto;
     display: block;
     width: 60%;
@@ -396,7 +400,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     width: 100%;
     max-height: 50vh;
     object-fit: contain;
-    margin-top: 50%;
+    /* margin-top: 50%; */
 }
 
 .prev,
@@ -492,18 +496,21 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 .heroTextContacto h1 {
     font-size: 19.5em;
     line-height: 0.9;
+    margin-bottom: 30px;
 }
 
-.heroTextContacto div {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
+.correoContacto {
+    position: absolute;
+    right: 30px;
     margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    color: #D4AF37;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0);
 }
 
-.heroTextContacto div:hover,
+.correoContacto:hover,
 .social-icons i:hover {
     cursor: pointer;
     color: #FFD700;
@@ -558,16 +565,19 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     color: #ffffff;
 }
 
+
 .infoContacto .col-lg-5 {
     margin-bottom: 30px;
     padding: 15px;
     border-radius: 1%;
 }
 
-.infoContacto p {
+.infoContacto h2 {
     font-size: 2em;
     text-align: center;
-    border-bottom: white solid;
+    border-bottom: #FFD700 solid;
+    margin-bottom: 20px;
+    color: #FFD700;
 }
 
 .infoContacto h1 {
@@ -727,6 +737,10 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 
 /* ------------------------------------------------------------------------------------------------------- */
 /* COOKIES*/
+#bloqueador {
+    display: block;
+    /* Asegúrate de que el overlay esté visible */
+}
 
 .cookieAviso {
     display: none;
@@ -738,7 +752,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     color: #fff;
     padding: 20px;
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 10000;
     text-align: center;
 }
 
@@ -924,9 +938,6 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         margin-bottom: 10px;
     }
 
-    .lightbox-content img {
-        margin-top: 30vh;
-    }
 
     .galeriaDeImagenes h1,
     .infoContacto h1 {
@@ -948,11 +959,12 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         line-height: 0.9;
     }
 
-    .heroTextContacto div {
-        display: contents;
+    .correoContacto {
+        top: 43%;
+        transform: translate(-3%);
     }
 
-    .heroTextContacto div i {
+    .correoContacto i {
         display: none;
     }
 
@@ -1020,11 +1032,13 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         line-height: 0.9;
     }
 
-    .heroTextContacto div {
-        display: contents;
+    .correoContacto {
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%);
     }
 
-    .heroTextContacto div i {
+    .correoContacto i {
         display: none;
     }
 
@@ -1085,11 +1099,13 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
         line-height: 0.9;
     }
 
-    .heroTextContacto div {
-        display: contents;
+    .correoContacto {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
     }
 
-    .heroTextContacto div i {
+    .correoContacto i {
         display: none;
     }
 

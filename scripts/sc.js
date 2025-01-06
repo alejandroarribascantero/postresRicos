@@ -213,13 +213,33 @@ function leerCookie() {
     }
 }
 
+function bloquearInteraccion() {
+    const bloqueador = document.createElement('div');
+    bloqueador.id = 'bloqueador';
+    bloqueador.style.position = 'fixed';
+    bloqueador.style.top = '0';
+    bloqueador.style.left = '0';
+    bloqueador.style.width = '100%';
+    bloqueador.style.height = '100%';
+    bloqueador.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+    bloqueador.style.zIndex = '9999';
+    document.body.appendChild(bloqueador);
+    document.body.style.overflow = 'hidden';
+}
+
 function ponerCookie() {
     setCookie('aceptar_cookie', '1', 365);
     document.getElementById('barraaceptacion').style.display = 'none';
+    document.getElementById('bloqueador').remove();
+    document.body.style.overflow = '';
 }
 
-$(document).ready(function () {
+// Al cargar la página, verifica si las cookies han sido aceptadas
+document.addEventListener('DOMContentLoaded', function () {
     leerCookie();
+    if (getCookie('aceptar_cookie') !== '1') {
+        bloquearInteraccion(); // Bloquear la interacción si no se han aceptado las cookies
+    }
 });
 
 $(document).ready(function () {
