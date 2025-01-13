@@ -76,6 +76,52 @@ nav.scrolled .navbar-nav .nav-link {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.navbar-nav.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-nav .menuItem {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-nav .menuItem .wee {
+    height: 2px;
+    width: 100%;
+    background-color: #FFD700;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.75s;
+    opacity: 0;
+}
+
+.navbar-nav .menuItem:hover .wee {
+    opacity: 1;
+}
+
+.navbar-nav .currentMenuItem .wee {
+    opacity: 1;
+}
+
+nav.scrolled .navbar-nav .menuItem .wee {
+    background-color: #000000;
+}
+
+nav.scrolled .navbar-nav .currentMenuItem .wee {
+    opacity: 1;
+}
+
+nav.scrolled .navbar-nav .menuItem:hover .wee {
+    opacity: 1;
+}
+
+.navbar-nav .menuItem .nav-link {
+    transition: 0.75s;
+}
+
 /* ------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
 
@@ -267,51 +313,7 @@ footer a:hover {
     color: #D4AF37;
 }
 
-.navbar-nav.menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.navbar-nav .menuItem {
-    position: relative;
-    cursor: pointer;
-}
-
-.navbar-nav .menuItem .wee {
-    height: 2px;
-    width: 100%;
-    background-color: #FFD700;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transition: 0.75s;
-    opacity: 0;
-}
-
-.navbar-nav .menuItem:hover .wee {
-    opacity: 1;
-}
-
-.navbar-nav .currentMenuItem .wee {
-    opacity: 1;
-}
-
-nav.scrolled .navbar-nav .menuItem .wee {
-    background-color: #000000;
-}
-
-nav.scrolled .navbar-nav .currentMenuItem .wee {
-    opacity: 1;
-}
-
-nav.scrolled .navbar-nav .menuItem:hover .wee {
-    opacity: 1;
-}
-
-.navbar-nav .menuItem .nav-link {
-    transition: 0.75s;
-}
 
 /* galeria */
 .galeriaDeImagenes h1 {
@@ -739,7 +741,6 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
 /* COOKIES*/
 #bloqueador {
     display: block;
-    /* Asegúrate de que el overlay esté visible */
 }
 
 .cookieAviso {
@@ -934,6 +935,7 @@ nav.scrolled .navbar-nav .menuItem:hover .wee {
     .receta>div>div {
         margin-top: 10px;
     }
+
     .titulo {
         font-size: 1.4em;
     }

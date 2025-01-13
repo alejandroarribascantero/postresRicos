@@ -5,6 +5,8 @@ let ultimoScrollY = window.scrollY;
 let imagenes = [];
 
 // Funciones
+
+// Cambiar color barra de navegacion y mostrar o ocultar
 function manejarScroll() {
     barraNavegacion.style.top = '0';
 
@@ -25,13 +27,15 @@ function manejarScroll() {
     ultimoScrollY = window.scrollY;
 }
 
+// Si el raton pasa por la posicion de la barra de navegacion mostrarla
 function manejarMouseMove(evento) {
     if (evento.clientY <= 35) {
         barraNavegacion.style.top = '0';
     }
 }
 
-function actualizarLineaMagica() {
+//Actualizar la linea de la barra de navegacion de que pagina se esta haciendo hover
+function actualizarLinea() {
     const elementoActual = document.querySelector('.currentMenuItem');
     if (!elementoActual) return;
 
@@ -56,6 +60,7 @@ function actualizarLineaMagica() {
     });
 }
 
+// Cargar imagenes desde un json a la galeria
 function cargarImagenes() {
     fetch('../imagenes.json')
         .then(response => response.json())
@@ -63,7 +68,6 @@ function cargarImagenes() {
             imagenes = data;
             const contenedor = document.getElementById('galeria');
             if (!contenedor) {
-                console.error('Error');
                 return;
             }
             data.forEach((imagen, index) => {
@@ -103,6 +107,7 @@ function filtrarGaleria(categoria) {
     });
 }
 
+// Abrir las imagenes para verlas una a una
 function abrirLightbox(index) {
     currentImageIndex = index;
     const lightbox = document.getElementById('lightbox');
@@ -131,6 +136,7 @@ function cambiarImagen(direccion) {
     document.getElementById('lightbox-img').src = imagenes[currentImageIndex].src;
 }
 
+// Validación del formulario de contacto
 function validacionForm() {
     const form = document.querySelector('.formContacto');
     const boton = document.getElementById('botonForm');
@@ -167,7 +173,7 @@ function validacionForm() {
                     errorText.textContent = 'Por favor, introduce un número de teléfono válido';
                     input.value = '';
                 } else {
-                    // Si pasa todas las validaciones, limpia errores
+                    // Si pasa todas las validaciones limpia errores
                     input.classList.remove('input-error');
                     errorText.textContent = '';
                 }
@@ -213,6 +219,7 @@ function leerCookie() {
     }
 }
 
+// No se permite la interaccion con la pagina hasta que se acepten las cookies
 function bloquearInteraccion() {
     const bloqueador = document.createElement('div');
     bloqueador.id = 'bloqueador';
@@ -248,7 +255,7 @@ $(document).ready(function () {
     });
 });
 
-
+// Carga recetas desde un JSON y las muestra en un timeline
 function recetas() {
     fetch('../recetas.json')
         .then(response => response.json())
@@ -313,6 +320,7 @@ function ocultarBanner() {
     banner.style.display = 'none';
 }
 
+// Enviar correo electrónico del banner
 function enviarCorreo(event) {
     event.preventDefault();
     const email = document.getElementById('email').value;
@@ -327,8 +335,8 @@ document.addEventListener('DOMContentLoaded', function () {
     recetas();
     window.addEventListener('scroll', manejarScroll);
     window.addEventListener('mousemove', manejarMouseMove);
-    window.addEventListener('load', actualizarLineaMagica);
-    window.addEventListener('resize', actualizarLineaMagica);
+    window.addEventListener('load', actualizarLinea);
+    window.addEventListener('resize', actualizarLinea);
     cargarImagenes();
     validacionForm();
 
