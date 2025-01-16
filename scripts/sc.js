@@ -338,6 +338,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', actualizarLinea);
     window.addEventListener('resize', actualizarLinea);
     cargarImagenes();
+    validacionForm();
 
 
 });
